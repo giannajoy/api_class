@@ -1,0 +1,37 @@
+/**
+Let's add some styling
+*/
+
+/*class selector*/
+.lbl{
+  font-size: 16px;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+/*id selector*/
+#age{
+  padding:8px;
+  border:none;
+  border-bottom:1px solid #ccc;
+  width:30%;
+}
+
+/*element/tag selector*/
+button{
+  display: block; /*display on a new line*/
+  margin-top : 20px; /*adding some space from the textbox*/
+  background-color: #008CBA; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
+h2{
+  font-family: 'Satisfy', cursive;
+  font-size : 50px;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+}
