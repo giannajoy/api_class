@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
+
+Route::get('cows','CowController@showAll');
+Route::get('cow/add','CowController@mockAdd');
+
+Route::get('staff','StaffController@listAll');
+Route::get('staff/add','StaffController@mockAdd');
