@@ -1,0 +1,7 @@
+{
+	"host" : "localhost",
+	"db" : "dairy",
+	"uname" : "root",
+	"pwd" : "",
+	"port" : "3306"
+}
