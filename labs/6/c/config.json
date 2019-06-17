@@ -1,7 +1,7 @@
 {
 	"host" : "localhost",
 	"db" : "dairy",
-	"uname" : "root",
-	"pwd" : "",
+	"username" : "dairy",
+	"password" : "dairy123",
 	"port" : "3306"
 }
