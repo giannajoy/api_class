@@ -35,4 +35,30 @@ class CowController extends Controller
       'age' => 3
     ]);
   }
+  //get all cows and return a json string.
+  public function getAllCows(){
+    return Cow::all();
+  }
+
+  //add a new record
+  public function addCow(Request $request){
+    $name = $request->name;
+    $age = $request->age;
+    $weight = $request->weight;
+    $gender = $request->gender;
+
+    $newCow = new Cow();
+    $newCow->name = $name;
+    $newCow->age = $age;
+    $newCow->weight = $weight;
+    $newCow->gender = $gender;
+    $newCow->save();
+
+    return $newCow;
+  }
+
+  //a function to delete
+  public function deleteCow(Request $request){
+    Cow::find($request->id)->delete();
+  }
 }

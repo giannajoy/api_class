@@ -17,6 +17,12 @@ Route::get('/', function () {
 
 Route::get('cows','CowController@showAll');
 Route::get('cow/add','CowController@mockAdd');
+//delete
+Route::post ('/cow/delete/{id}', 'CowController@deleteCow' );
+//view new
+Route::get('cows-v','CowController@getAllCows');
+//Add new
+Route::post('cow/save','CowController@addCow');
 
 Route::get('staff','StaffController@listAll');
 Route::get('staff/add','StaffController@mockAdd');
