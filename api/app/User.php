@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','phone','ccode'
     ];
 
     /**
@@ -36,4 +36,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //relationship
+    public function tokens(){
+      return $this->hasMany('App\Token');
+    }
+    public function getPhoneNumber()
+    {
+       return $this->ccode.$this->phone;
+    }
 }

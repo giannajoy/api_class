@@ -10,19 +10,28 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('dashboard');
-});
 Auth::routes();
-Route::get('cows','CowController@showAll');
-Route::get('cow/add','CowController@mockAdd');
-//delete
-Route::post ('/cow/delete/{id}', 'CowController@deleteCow' );
-//view new
-Route::get('cows-v','CowController@getAllCows');
-//Add new
-Route::post('cow/save','CowController@addCow');
+Route::get('code',function(){
+  return view('auth.code');
+});
+Route::get('/home', 'HomeController@index')->name('home');
+Route::post('verify-code','Auth\LoginController@verifyCode');
+Route::group(['middleware' => ['auth']], function() {
+  Route::get('/', function () {
+      return view('dashboard');
+  });
 
-Route::get('staff','StaffController@listAll');
-Route::get('staff/add','StaffController@mockAdd');
+  Route::get('cows','CowController@showAll');
+  Route::get('allCows','CowController@allCows');
+  Route::post ('/cow/delete/{id}', 'CowController@deleteCow' );
+  Route::get('cow/add','CowController@mockAdd');
+  Route::post ('cow/v-save', 'CowController@saveCow' );
+
+  Route::get('staff','StaffController@listAll');
+  Route::get('staff/add','StaffController@mockAdd');
+
+  Route::get('service/add','ServicesController@add');
+
+  Route::get('v-cows','CowController@vall');
+
+});
