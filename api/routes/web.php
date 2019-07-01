@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('dashboard');
 });
-
+Auth::routes();
 Route::get('cows','CowController@showAll');
 Route::get('cow/add','CowController@mockAdd');
 //delete
